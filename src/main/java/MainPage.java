@@ -1,8 +1,10 @@
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.UUID;
 
 public class MainPage {
@@ -34,7 +36,7 @@ public class MainPage {
     public void enterRandomEmail(){
 
         fieldEmailMain.clear();
-        fieldEmailMain.sendKeys(createRandomString() + "+wpt@wriketask.qaa");
+        fieldEmailMain.sendKeys(generateRandomString() + "+wpt@wriketask.qaa");
 
     }
 
@@ -44,7 +46,8 @@ public class MainPage {
 
     }
 
-    private String createRandomString(){
+    @Attachment
+    private String generateRandomString(){
 
         String uuid = UUID.randomUUID().toString().replace("-", "");
         int left = (int) (Math.random()*uuid.length());

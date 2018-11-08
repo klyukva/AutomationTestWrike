@@ -1,3 +1,4 @@
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -5,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.List;
 
 public class ResendPage {
@@ -144,9 +146,9 @@ public class ResendPage {
 
     }
 
-    public boolean checkIconTwitter(){
+    public boolean checkIconTwitter(String relativeTwitterImageLink){
 
-        return twitterButton.get(0).getAttribute("xlink:href").contains("/content/themes/wrike/dist/img/sprite/vector/footer-icons.symbol.svg?v1#twitter");
+        return twitterButton.get(0).getAttribute("xlink:href").contains(relativeTwitterImageLink);
 
     }
 
